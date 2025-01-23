@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-theme {
+    @apply bg-theme-color dark:bg-dark-theme-color;
+}
+.bg-theme-mild {
+    @apply bg-theme-color-mild dark:bg-dark-theme-color-mild;
+}
+.text-theme {
+    @apply text-neutral-800 dark:text-neutral-200;
+}
+.bg-overlay {
+    @apply bg-neutral-100 dark:bg-neutral-800;
+}
+.title {
+    @apply text-3xl font-semibold;
+}
+.text-primary {
+    @apply text-primary-color dark:text-dark-primary-color;
+}
+.text-link {
+    @apply text-black underline dark:text-neutral-400 font-semibold;
+}
+.text-danger {
+    @apply text-red-400 dark:text-red-600;
+}
+.border-danger {
+    @apply border border-red-400 dark:border-red-600;
+}
+.bg-primary {
+    @apply bg-primary-color dark:bg-dark-primary-color;
+}
+.border-primary {
+    @apply border border-primary-color dark:border-dark-primary-color;
+}
+.border-theme {
+    @apply border border-neutral-200 dark:border-neutral-700;
+}
+.border-b-theme {
+    @apply border-b border-neutral-200 dark:border-neutral-700;
+}
+
+.bg-light {
+    @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+.container {
+    @apply flex-1 bg-theme w-full;
+}
+.container-mild {
+    @apply flex-1 bg-theme-mild w-full;
+}
+.center {
+    @apply items-center justify-center;
+}
+.space {
+    @apply items-center justify-between;
+}
+.input-label {
+    @apply font-semibold;
+}
