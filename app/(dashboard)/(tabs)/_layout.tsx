@@ -4,6 +4,8 @@ import { Platform } from "react-native";
 import { TabBarBackground } from "@/components/ui";
 import { useColors } from "@/hooks";
 import { Iconify } from "react-native-iconify";
+import { PlatformPressable } from "@react-navigation/elements";
+import { ThemedHeader } from "@/components/theme";
 
 export default function TabLayout() {
     const colors = useColors();
@@ -12,11 +14,20 @@ export default function TabLayout() {
         <Tabs
             screenOptions={{
                 tabBarActiveTintColor: colors.tint,
-                headerShown: false,
                 tabBarBackground: TabBarBackground,
+                tabBarButton: (props) => (
+                    <PlatformPressable
+                        {...props}
+                        android_ripple={{ color: "transparent" }}
+                    />
+                ),
                 tabBarStyle: Platform.select({
                     ios: {
                         position: "absolute",
+                        height: 80,
+                    },
+                    android: {
+                        height: 60,
                     },
                     default: {},
                 }),
@@ -25,14 +36,19 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
-                    tabBarIcon: ({ color }) => (
+                    tabBarIcon: ({ focused }) => (
                         <Iconify
                             icon="mdi:home-outline"
-                            color={color}
+                            color={focused ? colors.primary : colors.tabIcon}
                             size={24}
+                            stroke={focused ? "#ddd" : colors.tabIcon}
+                            strokeWidth={focused ? 0.01 : 1}
                         />
                     ),
                     tabBarShowLabel: false,
+                    header: () => {
+                        return <ThemedHeader title="Ang" showTitle />;
+                    },
                 }}
             />
         </Tabs>

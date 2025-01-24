@@ -2,7 +2,7 @@ import { ThemedText, ThemedView } from "@/components/theme";
 
 const HomeScreen = () => {
     return (
-        <ThemedView>
+        <ThemedView className="px-3">
             <ThemedText content="Hello World" />
         </ThemedView>
     );

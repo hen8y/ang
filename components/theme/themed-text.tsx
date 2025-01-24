@@ -1,10 +1,5 @@
-import { Text, TextProps } from "react-native";
-
-type ThemedTextProps = TextProps & {
-    className?: string;
-    color?: string;
-    content?: string | null | number;
-};
+import { ThemedTextProps } from "@/constants/types";
+import { Text } from "react-native";
 
 export function ThemedText({
     className,

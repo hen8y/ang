@@ -3,7 +3,7 @@ import {
     hairlineWidth
 } from 'nativewind/theme';
 
-const colors = require('./constants');
+const colors = require('./settings/colors.json');
 
 module.exports = {
     content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],

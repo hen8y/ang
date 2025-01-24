@@ -1,13 +1,6 @@
+import { ThemedHeaderProps } from "@/constants/interfaces";
 import { useColors } from "@/hooks";
 import { Platform, StatusBar, Text, useColorScheme, View } from "react-native";
-
-export interface HeaderProps {
-    title?: string;
-    showTitle?: boolean;
-    rightIcon?: JSX.Element | null;
-    leftIcon?: JSX.Element | null;
-    theme?: string;
-}
 
 export function ThemedHeader({
     showTitle = true,
@@ -15,7 +8,7 @@ export function ThemedHeader({
     rightIcon,
     leftIcon,
     theme = "bg-theme",
-}: HeaderProps): JSX.Element {
+}: ThemedHeaderProps): JSX.Element {
     const colors = useColors();
     return (
         <>
